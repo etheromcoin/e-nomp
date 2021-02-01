@@ -1,11 +1,11 @@
-# BitZeny - Node Open Mining Portal
+# Node Open Mining Portal
 [![Join the chat at https://github.com/ROZ-MOFUMOFU-ME/zny-nomp/](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ROZ-MOFUMOFU-ME/zny-nomp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Matrix](https://img.shields.io/matrix/zny-nomp:matrix.mofumofu.me?label=matrix)](https://app.element.io/#/room/#zny-nomp:matrix.mofumofu.me)
-[![Build Status](https://travis-ci.com/ROZ-MOFUMOFU-ME/zny-nomp.svg?branch=main)](https://travis-ci.org/ROZ-MOFUMOFU-ME/zny-nomp) 
+[![Build Status](https://travis-ci.com/ROZ-MOFUMOFU-ME/zny-nomp.svg?branch=main)](https://travis-ci.org/ROZ-MOFUMOFU-ME/zny-nomp)
 [![CircleCI](https://circleci.com/gh/ROZ-MOFUMOFU-ME/zny-nomp/tree/main.svg?style=svg)](https://circleci.com/gh/ROZ-MOFUMOFU-ME/zny-nomp/tree/main)
 
 This is a Yescrypt, YesPoWer, Lyra2REv2, sha256d and more algo mining pool based off of Node Open Mining Portal.
-  
+
 #### Production Usage Notice
 This is beta software. All of the following are things that can change and break an existing ZNY-NOMP setup: functionality of any feature, structure of configuration files and structure of redis data. If you use this software in production then *DO NOT* pull new code straight into production usage because it can and often will break your setup and require you to tweak things like config files or redis data. *Only tagged releases are considered stable.*
 
@@ -80,8 +80,8 @@ sudo apt install npm -y
 sudo npm install n -g
 sudo n v12
 sudo apt purge nodejs npm -y
-sudo ln -sf /usr/local/bin/node /usr/bin/node 
-sudo ln -sf /usr/local/bin/npm /usr/bin/npm 
+sudo ln -sf /usr/local/bin/node /usr/bin/node
+sudo ln -sf /usr/local/bin/npm /usr/bin/npm
 git clone https://github.com/ROZ-MOFUMOFU-ME/zny-nomp
 cd zny-nomp
 npm install
@@ -98,10 +98,10 @@ Explanation for each field:
     /* Specifies the level of log output verbosity. Anything more severe than the level specified
        will also be logged. */
     "logLevel": "debug", //or "warning", "error"
-    
+
     /* By default the server logs to console and gives pretty colors. If you direct that output to a
        log file then disable this feature to avoid nasty characters in your log file. */
-    "logColors": true, 
+    "logColors": true,
 
     /* The server CLI (command-line interface) will listen for commands on this port. For example,
        blocknotify messages are sent to the server through this. */
@@ -115,30 +115,30 @@ Explanation for each field:
         "enabled": true,
         "forks": "auto"
     },
-    
+
     /* Pool config file will inherit these default values if they are not set. */
     "defaultPoolConfigs": {
-    
+
         /* Poll RPC daemons for new blocks every this many milliseconds. */
         "blockRefreshInterval": 1000,
-        
+
         /* If no new blocks are available for this many seconds update and rebroadcast job. */
         "jobRebroadcastTimeout": 55,
-        
+
         /* Disconnect workers that haven't submitted shares for this many seconds. */
         "connectionTimeout": 600,
-        
+
         /* (For MPOS mode) Store the block hashes for shares that aren't block candidates. */
         "emitInvalidBlockHashes": false,
-        
+
         /* This option will only authenticate miners using an address or mining key. */
         "validateWorkerUsername": true,
-        
+
         /* Enable for client IP addresses to be detected when using a load balancer with TCP
            proxy protocol enabled, such as HAProxy with 'send-proxy' param:
            http://haproxy.1wt.eu/download/1.5/doc/configuration.txt */
         "tcpProxyProtocol": false,
-        
+
         /* If under low-diff share attack we can ban their IP to reduce system/network load. If
            running behind HAProxy be sure to enable 'tcpProxyProtocol', otherwise you'll end up
            banning your own IP address (and therefore all workers). */
@@ -149,7 +149,7 @@ Explanation for each field:
             "checkThreshold": 500, //Perform check when this many shares have been submitted
             "purgeInterval": 300 //Every this many seconds clear out the list of old bans
         },
-        
+
         /* Used for storing share and block submission data and payment processing. */
         "redis": {
             "host": "127.0.0.1",
@@ -264,7 +264,7 @@ Here is an example of the required fields:
     "symbol": "ZNY",
     "algorithm": "yescryptR8",
 
-    // Coinbase value is what is added to a block when it is mined, set this to your pool name so 
+    // Coinbase value is what is added to a block when it is mined, set this to your pool name so
     // explorers can see which pool mined a particular block.
     "coinbase": "Bitzeny",
     /* Magic value only required for setting up p2p block notifications. It is found in the daemon

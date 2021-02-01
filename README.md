@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.com/ROZ-MOFUMOFU-ME/zny-nomp.svg?branch=main)](https://travis-ci.org/ROZ-MOFUMOFU-ME/zny-nomp)
 [![CircleCI](https://circleci.com/gh/ROZ-MOFUMOFU-ME/zny-nomp/tree/main.svg?style=svg)](https://circleci.com/gh/ROZ-MOFUMOFU-ME/zny-nomp/tree/main)
 
-This is a Yescrypt, YesPoWer, Lyra2REv2, sha256d and more algo mining pool based off of Node Open Mining Portal.
+This is a Yescrypt, YesPoWer, Lyra2REv2, Cpupower, sha256d and more algo mining pool based off of Node Open Mining Portal.
 
 #### Production Usage Notice
 This is beta software. All of the following are things that can change and break an existing ZNY-NOMP setup: functionality of any feature, structure of configuration files and structure of redis data. If you use this software in production then *DO NOT* pull new code straight into production usage because it can and often will break your setup and require you to tweak things like config files or redis data. *Only tagged releases are considered stable.*
@@ -27,6 +27,7 @@ If your pool uses ZNY-NOMP let us know and we will list your website here.
 
 ### Some pools using ZNY-NOMP or node-stratum-pool module:
 
+* [Instapool.xyz](https://instapool.xyz/)
 * [mofumofu.me - BitZeny Mining Pool](https://zny.mofumofu.me/)
 * [人のプール](https://mining.zinntikumugai.xyz/)
 * [みんなのプール](https://www.minnano-pool.work/)

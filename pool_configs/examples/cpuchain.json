@@ -7,6 +7,9 @@
     "rewardRecipients": {
         "": 1.0
     },
+	
+    "BTCover17": true,
+    "_comment_BTCover17": "If BTC 0.17 or higher, payment does not work please enable it",
 
     "paymentProcessing": {
 	"minConf": 10,

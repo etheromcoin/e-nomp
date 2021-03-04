@@ -1,13 +1,13 @@
 # Node Open Mining Portal
-[![Join the chat at https://github.com/ROZ-MOFUMOFU-ME/zny-nomp/](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ROZ-MOFUMOFU-ME/zny-nomp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Matrix](https://img.shields.io/matrix/zny-nomp:matrix.mofumofu.me?label=matrix)](https://app.element.io/#/room/#zny-nomp:matrix.mofumofu.me)
-[![Build Status](https://travis-ci.com/ROZ-MOFUMOFU-ME/zny-nomp.svg?branch=main)](https://travis-ci.org/ROZ-MOFUMOFU-ME/zny-nomp)
-[![CircleCI](https://circleci.com/gh/ROZ-MOFUMOFU-ME/zny-nomp/tree/main.svg?style=svg)](https://circleci.com/gh/ROZ-MOFUMOFU-ME/zny-nomp/tree/main)
+[![Join the chat at https://github.com/blockinator/v-nomp/](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/blockinator/v-nomp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Matrix](https://img.shields.io/matrix/v-nomp:matrix.mofumofu.me?label=matrix)](https://app.element.io/#/room/#v-nomp:matrix.mofumofu.me)
+[![Build Status](https://travis-ci.com/ROZ-MOFUMOFU-ME/v-nomp.svg?branch=main)](https://travis-ci.org/ROZ-MOFUMOFU-ME/v-nomp)
+[![CircleCI](https://circleci.com/gh/ROZ-MOFUMOFU-ME/v-nomp/tree/main.svg?style=svg)](https://circleci.com/gh/ROZ-MOFUMOFU-ME/v-nomp/tree/main)
 
-This is a Yescrypt, YesPoWer, Lyra2REv2, Cpupower, power2b, sha256d and more algo mining pool based off of Node Open Mining Portal.
+This is a Yescrypt, YesPower, Lyra2REv2, CPUpower, power2b, YesPowerSugar, sha256d and more algo mining pool based off of Node Open Mining Portal.
 
 #### Production Usage Notice
-This is beta software. All of the following are things that can change and break an existing ZNY-NOMP setup: functionality of any feature, structure of configuration files and structure of redis data. If you use this software in production then *DO NOT* pull new code straight into production usage because it can and often will break your setup and require you to tweak things like config files or redis data. *Only tagged releases are considered stable.*
+This is beta software. All of the following are things that can change and break an existing V-NOMP setup: functionality of any feature, structure of configuration files and structure of redis data. If you use this software in production then *DO NOT* pull new code straight into production usage because it can and often will break your setup and require you to tweak things like config files or redis data. *Only tagged releases are considered stable.*
 
 #### Paid Solution
 Usage of this software requires abilities with sysadmin, database admin, coin daemons, and sometimes a bit of programming. Running a production pool can literally be more work than a full-time job.
@@ -23,9 +23,9 @@ Wiki
 Discord
 * https://discord.gg/xmWd3yy
 
-If your pool uses ZNY-NOMP let us know and we will list your website here.
+If your pool uses V-NOMP let us know and we will list your website here.
 
-### Some pools using ZNY-NOMP or node-stratum-pool module:
+### Some pools using V-NOMP or node-stratum-pool module:
 
 * [Instapool.xyz](https://instapool.xyz/)
 * [mofumofu.me - BitZeny Mining Pool](https://zny.mofumofu.me/)
@@ -83,8 +83,8 @@ sudo n v12
 sudo apt purge nodejs npm -y
 sudo ln -sf /usr/local/bin/node /usr/bin/node
 sudo ln -sf /usr/local/bin/npm /usr/bin/npm
-git clone https://github.com/blockinator/zny-nomp
-cd zny-nomp
+git clone https://github.com/blockinator/v-nomp
+cd v-nomp
 npm install
 ```
 
@@ -286,7 +286,7 @@ see [these instructions](//github.com/AoD-Technologies/cryptocurrency-stratum-po
 
 
 ##### Pool config
-Take a look at the example json file inside the `pool_configs` directory. Rename it to `bitzeny.json` and change the
+Take a look at the example json file inside the `pool_configs` directory. Rename it to `yourcoin.json` and change the
 example fields to fit your setup.
 
 ```
@@ -304,9 +304,9 @@ ie: Miner 1 mines at 0.1 difficulty and finds 10 shares, the pool sees it as 1 s
 ```
 node [path to cli.js] [coin name in config] [block hash symbol]
 ```
-Example: inside `bitzeny.conf` add the line
+Example: inside `yourcoin.conf` add the line
 ```
-blocknotify=node /home/user/zny-nomp/scripts/cli.js blocknotify bitzeny %s
+blocknotify=node /home/user/v-nomp/scripts/cli.js blocknotify yourcoin %s
 ```
 
 Alternatively, you can use a more efficient block notify script written in pure C. Build and usage instructions
@@ -325,34 +325,35 @@ in case the master process crashes.
 * Use something like [redis-commander](https://github.com/joeferner/redis-commander) to have a nice GUI
 for exploring your redis database.
 * Use something like [logrotator](http://www.thegeekstuff.com/2010/07/logrotate-examples/) to rotate log
-output from ZNY-NOMP.
-* Use [New Relic](http://newrelic.com/) to monitor your ZNY-NOMP instance and server performance.
+output from V-NOMP.
+* Use [New Relic](http://newrelic.com/) to monitor your V-NOMP instance and server performance.
 
 
-#### Upgrading ZNY-NOMP
-When updating ZNY-NOMP to the latest code its important to not only `git pull` the latest from this repo, but to also update
+#### Upgrading V-NOMP
+When updating V-NOMP to the latest code its important to not only `git pull` the latest from this repo, but to also update
 the `node-stratum-pool` and `node-multi-hashing` modules, and any config files that may have been changed.
-* Inside your ZNY-NOMP directory (where the init.js script is) do `git pull` to get the latest ZNY-NOMP code.
-* Remove the dependenices by deleting the `node_modules` directory with `rm -r node_modules`.
+* Inside your V-NOMP directory (where the init.js script is) do `git pull` to get the latest V-NOMP code.
+* Remove the dependencies by deleting the `node_modules` directory with `rm -r node_modules`.
 * Run `npm update` to force updating/reinstalling of the dependencies.
 * Compare your `config.json` and `pool_configs/coin.json` configurations to the latest example ones in this repo or the ones in the setup instructions where each config field is explained. <b>You may need to modify or add any new changes.</b>
 
 Donations
 -------
  Donations for development are greatly appreciated!
-  * ZNY: ZmnBu9jPKvVFL22PcwMHSEuVpTxFeCdvNv
-  * NUKO: 0xa79bde46faab3c40632604728e9f2165b052581c
-  * KOTO :k1FTuimwDJ8oo3x23cEBLxovxw5Cqq2U1HK
-  * SUSU: SeXbMBaax7NgnTEFEMxin5ycXy9r9CDBot
-  * MONA: mona1qnur6ljkl5pe8w6ql8xfqw4aa38d5xa9q68dxll
-  * BELL: BCVicYRSqKKt1ynJKPrXHA46hUWLrbjR49
-  * SUGAR: sugar1qtwqle9lrr753kxuzqqsh3hv28jl07e3mntx78n
-  * VIPS: VFixsia2EstV4uEEigUXUrknDGsFeWyNhE
-  * KUMA: KHjjZ5misqq45zwhj86WKqV8bzqcYExzyM
-  * BTC: 3C8oCWjVs2sycQcK3ttiPRSKV4AKBhC7xT
+  * BTC: 1Jtnju5EuWFs5QZNmp8g5JYhQHqRjwzw78
+  * ETH: 0x745F2Bc9570B8C8DcD51249d7fdC2528f03efF1c
+  * LTC: LKF12Fi92zuxDhpHLe7gSWBtTdJbcULa85
+  * BCH: qpxcm3r90y6cedvazm4phwr82m3ywwn66gzwllq63l
+  * DOGE: DDrA5dZTjjnyYPxT23wmG5X5sxqt7XNMQe
+  * BNB: bnb1lzc9aawhyxqly93dxe8eqqf0er5h3ykdj8ja96
+  * XMR: 44c7umSm7TyXxKch9q4R5QfoTAf663A8yEFfJbxmxUJ1JCWq2kFu33oAAydrgNDQA8619rSQhZaFV3ScpESWCfcQB3Fqc6w
+
 
 Credits
 -------
+### V-NOMP
+* [blockinator](https://github.com/blockinator)
+
 ### ZNY-NOMP
 * [ROZ-MOFUMOFU-ME](https://github.com/ROZ-MOFUMOFU-ME)
 * [zinntikumugai](https://github.com/zinntikumugai) - great supporter

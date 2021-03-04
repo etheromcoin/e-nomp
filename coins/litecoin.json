@@ -4,14 +4,6 @@
     "algorithm": "scrypt",
     "peerMagic": "fbc0b6db",
     "peerMagicTestnet": "fdd2c8f1",
-    "mainnet": {
-        "bech32": "ltc",
-        "bip32": {
-            "public": "0488b21e"
-        },
-        "pubKeyHash": "30",
-        "scriptHash": "32"
-    },
     "blockTime": 150,
     "explorer": {
         "txURL": "https://blockchair.com/litecoin/transaction/",

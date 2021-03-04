@@ -12,7 +12,7 @@
     "_comment_BTCover17": "If BTC 0.17 or higher, payment does not work please enable it",
 
     "paymentProcessing": {
-	"minConf": 10,
+	      "minConf": 10,
         "enabled": true,
         "paymentMode": "prop",
         "_comment_paymentMode":"prop, pplnt",

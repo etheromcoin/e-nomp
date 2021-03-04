@@ -4,10 +4,6 @@
     "algorithm": "scrypt",
     "peerMagic": "c0c0c0c0",
     "peerMagicTestnet": "fcc1b7dc",
-    "mainnet": {
-        "pubKeyHash": "1E",
-        "scriptHash": "16"
-    },
     "blockTime": 60,
     "explorer": {
         "txURL": "https://dogechain.info/tx/",

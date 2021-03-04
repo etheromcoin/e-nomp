@@ -1,8 +1,8 @@
 # Node Open Mining Portal
 [![Join the chat at https://github.com/blockinator/v-nomp/](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/blockinator/v-nomp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Matrix](https://img.shields.io/matrix/v-nomp:matrix.mofumofu.me?label=matrix)](https://app.element.io/#/room/#v-nomp:matrix.mofumofu.me)
-[![Build Status](https://travis-ci.com/ROZ-MOFUMOFU-ME/v-nomp.svg?branch=main)](https://travis-ci.org/ROZ-MOFUMOFU-ME/v-nomp)
-[![CircleCI](https://circleci.com/gh/ROZ-MOFUMOFU-ME/v-nomp/tree/main.svg?style=svg)](https://circleci.com/gh/ROZ-MOFUMOFU-ME/v-nomp/tree/main)
+[![Build Status](https://travis-ci.com/blockinator/v-nomp.svg?branch=main)](https://travis-ci.org/blockinator/v-nomp)
+[![CircleCI](https://circleci.com/gh/blockinator/v-nomp/tree/main.svg?style=svg)](https://circleci.com/gh/blockinator/v-nomp/tree/main)
 
 This is a Yescrypt, YesPower, Lyra2REv2, CPUpower, power2b, YesPowerSugar, sha256d and more algo mining pool based off of Node Open Mining Portal.
 

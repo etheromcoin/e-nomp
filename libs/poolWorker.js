@@ -170,6 +170,9 @@ module.exports = function(logger){
         var pool = Stratum.createPool(poolOptions, authorizeFN, logger);
         pool.on('share', function(isValidShare, isValidBlock, data){
 
+            if(data.worker != undefined)
+				data.worker = data.worker.replace(/:/g,"-") 
+
             var shareData = JSON.stringify(data);
 
             if (data.blockHash && !isValidBlock)

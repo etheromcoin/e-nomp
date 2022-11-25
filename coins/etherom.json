@@ -1,0 +1,9 @@
+{
+    "name": "Etheromcoin",
+    "symbol": "ETHRC",
+    "algorithm": "heavyhash",
+    "blockTime": 60,
+    "reward": "POS",
+    "explorer": {
+    }
+}
